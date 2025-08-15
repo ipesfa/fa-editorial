@@ -50,7 +50,7 @@ export function FeaturedBook() {
                   <p className="text-muted-foreground">{featuredBook.anio}</p>
                 </div>
 
-                <p className="text-foreground leading-relaxed text-base font-light">{featuredBook.resumen}</p>
+                <p className="text-foreground leading-relaxed text-base font-light text-justify">{featuredBook.resumen}</p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">

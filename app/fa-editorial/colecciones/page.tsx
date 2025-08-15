@@ -48,7 +48,7 @@ export default function ColeccionesPage() {
               <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 Nuestras Colecciones
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify">
                 Explora nuestras colecciones especializadas que abarcan diferentes áreas del conocimiento y la investigación académica.
               </p>
               <div className="w-24 h-px bg-border mx-auto mt-8"></div>
@@ -78,7 +78,7 @@ export default function ColeccionesPage() {
                       
                       {/* Descripción con scroll si es necesario */}
                       <div className="flex-1 overflow-hidden">
-                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-8 group-hover:line-clamp-none group-hover:overflow-y-auto group-hover:pr-2">
+                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-8 group-hover:line-clamp-none group-hover:overflow-y-auto group-hover:pr-2 text-justify">
                           {coleccion.descripcion}
                         </p>
                       </div>
@@ -104,7 +104,7 @@ export default function ColeccionesPage() {
                 <h2 className="font-serif text-3xl lg:text-4xl font-bold text-foreground mb-6">
                   ¿Interesado en publicar?
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-justify">
                   Si tenés un proyecto de investigación o publicación que se alinee con alguna de nuestras colecciones, 
                   te invitamos a conocer nuestro proceso de envío de proyectos.
                 </p>

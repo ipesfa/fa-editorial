@@ -27,7 +27,7 @@ export default function EnvioProyectosPage() {
                 Cómo Publicar
               </h1>
               <div className="w-24 h-px bg-border mx-auto mb-6"></div>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed text-justify">
                 Para presentar tu original a FA Editorial, debés completar el formulario y enviarlo por correo a{" "}
                 <a 
                   href="mailto:faeditorial@ipesfa-ushuaia.edu.ar" 
@@ -36,7 +36,7 @@ export default function EnvioProyectosPage() {
                   faeditorial@ipesfa-ushuaia.edu.ar
                 </a>
               </p>
-              <p className="text-base text-muted-foreground mt-4">
+              <p className="text-base text-muted-foreground mt-4 text-justify">
                 Realizaremos una evaluación del proyecto y nos pondremos en contacto para informarte acerca de los pasos a seguir.
               </p>
             </div>
@@ -54,7 +54,7 @@ export default function EnvioProyectosPage() {
                 <h3 className="text-xl font-semibold text-foreground mt-4">
                   Formulario de presentación de propuestas
                 </h3>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="text-sm text-muted-foreground mt-2 text-justify">
                   Para la instancia de presentación, se requiere completar todos los ítems que se detallan a continuación. 
                   El presente formulario junto con el CV de lxs Docentes Responsables del proyecto deberá ser enviado a la Jefatura de Investigación.
                 </p>
