@@ -203,13 +203,28 @@ export default async function BookPage({ params }: BookPageProps) {
                           <Button
                             key={formato.tipo}
                             size="lg"
-                            className="bg-black hover:bg-white hover:text-black text-[#E6D690] border border-black transition-all duration-300 text-sm sm:text-base"
-                            asChild
+                            className={`border border-black transition-all duration-300 text-sm sm:text-base ${
+                              formato.tipo === "EPUB" 
+                                ? "bg-gray-300 text-gray-500 cursor-not-allowed" 
+                                : "bg-black hover:bg-white hover:text-black text-[#E6D690]"
+                            }`}
+                            disabled={formato.tipo === "EPUB"}
+                            asChild={formato.tipo !== "EPUB"}
                           >
-                            <Link href={formato.url}>
-                              <Download className="w-4 h-4 mr-2" />
-                              Descargar {formato.tipo}
-                            </Link>
+                            {formato.tipo === "EPUB" ? (
+                              <div className="flex items-center">
+                                <Download className="w-4 h-4 mr-2" />
+                                {formato.tipo} - {formato.size}
+                              </div>
+                            ) : (
+                              <Link href={formato.url}>
+                                <Download className="w-4 h-4 mr-2" />
+                                Descargar {formato.tipo}
+                                {formato.size && (
+                                  <span className="ml-2 text-xs opacity-75">({formato.size})</span>
+                                )}
+                              </Link>
+                            )}
                           </Button>
                         ))}
                       </div>

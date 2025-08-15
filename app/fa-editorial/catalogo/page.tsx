@@ -239,9 +239,14 @@ export default function CatalogoPage() {
                           </Button>
                           
                           {libro.formatos && libro.formatos.length > 0 && (
-                            <Button size="sm" variant="outline" className="border-[#E6D690] text-[#E6D690] hover:bg-[#E6D690] hover:text-black text-xs sm:text-sm">
-                              <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-                              Descargar
+                            <Button size="sm" variant="outline" className="border-[#E6D690] text-[#E6D690] hover:bg-[#E6D690] hover:text-black text-xs sm:text-sm" asChild>
+                              <Link href={libro.formatos[0].url}>
+                                <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                                Descargar
+                                {libro.formatos[0].size && (
+                                  <span className="ml-1 text-xs opacity-75">({libro.formatos[0].size})</span>
+                                )}
+                              </Link>
                             </Button>
                           )}
                         </div>

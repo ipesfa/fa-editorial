@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { Calendar, Globe, Sparkles } from "lucide-react"
+import { Calendar, Globe, Sparkles, Download } from "lucide-react"
 import { libros } from "@/data/libros"
 
 export function HighlightsSection() {
@@ -109,6 +109,19 @@ export function HighlightsSection() {
                     <path d="m12 5 7 7-7 7"></path>
                   </svg>
                 </Link>
+                
+                {latestBook.openAccess && latestBook.formatos && (
+                  <Link
+                    href={latestBook.formatos[0].url}
+                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium disabled:pointer-events-none disabled:opacity-50 border shadow-xs h-12 has-[&>svg]:px-4 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 px-8 py-3 text-base bg-white rounded-none tracking-wide hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    <Download className="w-4 h-4" />
+                    Descargar PDF
+                    {latestBook.formatos[0].size && (
+                      <span className="text-xs opacity-75">({latestBook.formatos[0].size})</span>
+                    )}
+                  </Link>
+                )}
               </div>
             </div>
           </div>
