@@ -81,6 +81,9 @@ body {
   background-color: white;
   color: black;
   font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Agregando clases personalizadas para FA Editorial */
@@ -162,4 +165,142 @@ body {
 /* Efecto de gradiente para el fondo */
 .gradient-bg {
   background: linear-gradient(135deg, rgba(230, 214, 144, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+/* Optimizaciones específicas para móviles */
+@media (max-width: 640px) {
+  /* Mejorar la legibilidad en pantallas pequeñas */
+  body {
+    font-size: 16px; /* Previene zoom automático en iOS */
+  }
+  
+  /* Ajustar espaciado para móviles */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Optimizar botones para touch */
+  button, 
+  [role="button"],
+  .cursor-pointer {
+    min-height: 44px; /* Tamaño mínimo recomendado para touch */
+    min-width: 44px;
+  }
+  
+  /* Mejorar navegación táctil */
+  nav a,
+  .nav-link {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+  }
+  
+  /* Optimizar formularios para móviles */
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Previene zoom en iOS */
+    padding: 0.75rem;
+  }
+  
+  /* Mejorar cards para móviles */
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Optimizar imágenes */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Mejorar tipografía en móviles */
+  h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  /* Optimizar grid para móviles */
+  .grid {
+    gap: 1rem;
+  }
+  
+  /* Mejorar espaciado en móviles */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+}
+
+/* Optimizaciones para tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Ajustar tamaños de texto para tablets */
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+/* Optimizaciones para pantallas grandes */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Mejorar accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimizar para modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+  /* Mantener colores claros para FA Editorial */
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
+/* Mejorar rendimiento de scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimizar para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
 }

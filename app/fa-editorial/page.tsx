@@ -14,22 +14,22 @@ export default function FAEditorialHomePage() {
       <SiteHeader />
       <main>
         {/* Hero Section */}
-        <section className="relative bg-white py-20 min-h-screen flex items-center justify-center">
+        <section className="relative bg-white py-12 sm:py-16 lg:py-20 min-h-screen flex items-center justify-center">
           <div className="container mx-auto px-4">
             <div className="text-center">
-              <div className="flex items-center justify-center mb-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center mb-8 space-y-6 sm:space-y-0 sm:space-x-8 lg:space-x-14">
                 <Image
                   src="/fa-editorial-logo 2.png"
                   alt="FA Editorial Logo"
                   width={300}
                   height={300}
-                  className="w-72 h-72 object-contain mr-14"
+                  className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 object-contain"
                 />
                 <div className="flex items-center">
                   <TextType
                     text="EDITORIAL"
                     as="h1"
-                    className="text-7xl lg:text-8xl font-bold text-[#E6D690] uppercase tracking-wider"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#E6D690] uppercase tracking-wider"
                     typingSpeed={100}
                     initialDelay={500}
                     showCursor={true}
@@ -40,8 +40,8 @@ export default function FAEditorialHomePage() {
                 </div>
               </div>
               
-              <div className="max-w-3xl mx-auto mt-32">
-                <p className="text-xl text-gray-600 mb-8">
+              <div className="max-w-3xl mx-auto mt-16 sm:mt-20 lg:mt-32 px-4">
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
                   Descubrí las mejores publicaciones académicas y culturales
                 </p>
               </div>
