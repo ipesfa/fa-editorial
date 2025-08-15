@@ -19,12 +19,16 @@ export function AuthorsGrid() {
             {featuredAuthors.map((autor, index) => (
               <div key={autor.id} className="group block">
                 <div className="rounded-2xl p-6 h-64 flex flex-col justify-center items-center text-center transition-all duration-300 bg-white/80 backdrop-blur-sm text-black hover:bg-white hover:shadow-md hover:border hover:border-[#E6D690]/30">
-                  {/* Author Image or Initials */}
+                  {/* Author Image or Emoji */}
                   <div className="mb-4">
-                    {autor.foto ? (
+                    {autor.foto && autor.foto.startsWith('👤') ? (
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-3xl bg-gray-100 group-hover:bg-[#E6D690]/20 transition-colors duration-300">
+                        {autor.foto}
+                      </div>
+                    ) : autor.foto ? (
                       <div className="w-16 h-16 rounded-full overflow-hidden">
                         <Image
-                          src={autor.foto || "/placeholder.svg"}
+                          src={autor.foto}
                           alt={`Foto de ${autor.nombre}`}
                           width={64}
                           height={64}
@@ -46,7 +50,7 @@ export function AuthorsGrid() {
                   {/* Author Info */}
                   <h3 className="font-sans text-xl font-medium mb-2 leading-tight">{autor.nombre}</h3>
                   <p className="text-sm font-medium tracking-wider uppercase text-gray-500 group-hover:text-[#D4C078] transition-colors duration-300">
-                    {autor.especialidad || "AUTOR"}
+                    {autor.area || "AUTOR"}
                   </p>
                 </div>
               </div>
