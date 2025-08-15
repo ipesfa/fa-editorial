@@ -9,7 +9,6 @@ export function SiteHeader() {
     { name: "Quienes somos", href: "/fa-editorial/quienes-somos" },
     { name: "Catálogo", href: "/fa-editorial/catalogo" },
     { name: "Colecciones", href: "/fa-editorial/colecciones" },
-    { name: "Autores", href: "/fa-editorial/autores" },
     { name: "Envío de proyectos", href: "/fa-editorial/envio-proyectos" },
   ]
 
@@ -25,7 +24,7 @@ export function SiteHeader() {
               height={32}
               className="w-8 h-8 object-contain"
             />
-            <span className="font-light text-xl text-yellow-200 tracking-wide">EDITORIAL</span>
+            <span className="font-light text-xl text-[#E6D690] tracking-wide">EDITORIAL</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -33,7 +32,7 @@ export function SiteHeader() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-yellow-200 transition-colors duration-200 text-sm font-medium tracking-wide"
+                className="text-gray-300 hover:text-[#E6D690] transition-colors duration-200 text-sm font-medium tracking-wide"
               >
                 {item.name}
               </Link>
@@ -41,7 +40,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center">
-            <button className="text-gray-300 hover:text-yellow-200 transition-colors duration-200">
+            <button className="text-gray-300 hover:text-[#E6D690] transition-colors duration-200">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"

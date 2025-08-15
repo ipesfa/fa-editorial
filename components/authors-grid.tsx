@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import Image from "next/image"
 import { autores } from "@/data/autores"
 
@@ -12,22 +11,13 @@ export function AuthorsGrid() {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="flex justify-between items-end mb-12">
+          <div className="mb-12">
             <h2 className="font-sans text-5xl lg:text-6xl font-light text-black tracking-tight">Autores</h2>
-            <Link
-              href="/fa-editorial/autores"
-              className="text-gray-600 hover:text-[#D4C078] transition-colors duration-200 text-2xl font-medium group"
-            >
-              Ver todos los autores
-              <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-200 text-3xl">
-                →
-              </span>
-            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredAuthors.map((autor, index) => (
-              <Link key={autor.id} href={`/fa-editorial/autores/${autor.id}`} className="group block">
+              <div key={autor.id} className="group block">
                 <div className="rounded-2xl p-6 h-64 flex flex-col justify-center items-center text-center transition-all duration-300 bg-white/80 backdrop-blur-sm text-black hover:bg-white hover:shadow-md hover:border hover:border-[#E6D690]/30">
                   {/* Author Image or Initials */}
                   <div className="mb-4">
@@ -59,7 +49,7 @@ export function AuthorsGrid() {
                     {autor.especialidad || "AUTOR"}
                   </p>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

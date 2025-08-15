@@ -1,23 +1,59 @@
-import RotatingText from "@/components/RotatingText"
+"use client";
+
+import { SiteHeader } from '@/components/site-header';
+import { HighlightsSection } from '@/components/highlights-section';
+import { CollectionsTiles } from '@/components/collections-tiles';
+import { AuthorsGrid } from '@/components/authors-grid';
+import { SiteFooter } from '@/components/site-footer';
+import Image from 'next/image';
+import TextType from '@/components/TextType';
 
 export default function FAEditorialHomePage() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-8xl font-bold text-foreground mb-8">
-          <RotatingText
-            texts={["FA revista"]}
-            rotationInterval={3000}
-            splitBy="characters"
-            staggerDuration={0.1}
-            mainClassName="text-8xl font-bold"
-            elementLevelClassName="text-8xl font-bold"
-          />
-        </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Editorial académica digital del Instituto Florentino Ameghino
-        </p>
-      </div>
-    </div>
-  )
+    <>
+      <SiteHeader />
+      <main>
+        {/* Hero Section */}
+        <section className="relative bg-white py-20 min-h-screen flex items-center justify-center">
+          <div className="container mx-auto px-4">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-8">
+                <Image
+                  src="/fa-editorial-logo 2.png"
+                  alt="FA Editorial Logo"
+                  width={300}
+                  height={300}
+                  className="w-72 h-72 object-contain mr-14"
+                />
+                <div className="flex items-center">
+                  <TextType
+                    text="EDITORIAL"
+                    as="h1"
+                    className="text-7xl lg:text-8xl font-bold text-[#E6D690] uppercase tracking-wider"
+                    typingSpeed={100}
+                    initialDelay={500}
+                    showCursor={true}
+                    cursorCharacter="|"
+                    cursorClassName=""
+                    loop={false}
+                  />
+                </div>
+              </div>
+              
+              <div className="max-w-3xl mx-auto mt-32">
+                <p className="text-xl text-gray-600 mb-8">
+                  Descubrí las mejores publicaciones académicas y culturales
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <HighlightsSection />
+        <CollectionsTiles />
+        <AuthorsGrid />
+      </main>
+      <SiteFooter />
+    </>
+  );
 }
