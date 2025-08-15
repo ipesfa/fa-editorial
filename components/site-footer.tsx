@@ -11,21 +11,32 @@ export function SiteFooter() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-start mb-8">
             {/* Lado izquierdo: Logos y texto descriptivo */}
             <div className="mb-6 md:mb-0">
-              <div className="flex items-center space-x-4 mb-3">
+              <div className="flex items-center space-x-6 mb-3">
                 <Image
                   src="/fa-blanco.png"
                   alt="FA Editorial"
                   width={120}
                   height={40}
-                  className="h-12 w-auto"
+                  className="h-12 w-auto object-contain"
                 />
-                <Image
-                  src="/fa-ipes.png"
-                  alt="IPES Florentino Ameghino"
-                  width={120}
-                  height={40}
-                  className="h-12 w-auto"
-                />
+                <Link href="https://ipesfa-ushuaia.edu.ar/" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/fa-ipes.png"
+                    alt="IPES Florentino Ameghino"
+                    width={120}
+                    height={40}
+                    className="h-12 w-auto object-contain hover:opacity-80 transition-opacity"
+                  />
+                </Link>
+                <Link href="https://revista-institucional.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/revista.png"
+                    alt="Revista"
+                    width={120}
+                    height={40}
+                    className="h-9 w-auto object-contain hover:opacity-80 transition-opacity"
+                  />
+                </Link>
               </div>
               <p className="text-sm text-white/80 font-light">
                 Descubrí las mejores publicaciones académicas y culturales
