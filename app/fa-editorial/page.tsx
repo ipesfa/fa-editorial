@@ -6,9 +6,24 @@ import { CollectionsTiles } from '@/components/collections-tiles';
 import { AuthorsGrid } from '@/components/authors-grid';
 import { SiteFooter } from '@/components/site-footer';
 import Image from 'next/image';
-import TextType from '@/components/TextType';
+import { useState, useEffect } from 'react';
 
 export default function FAEditorialHomePage() {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const text = "EDITORIAL";
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayedText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 150);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, text]);
+
   return (
     <>
       <SiteHeader />
@@ -30,17 +45,10 @@ export default function FAEditorialHomePage() {
                     priority
                   />
                   <div className="flex items-center justify-center">
-                    <TextType
-                      text="EDITORIAL"
-                      as="h1"
-                      className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-[#E6D690] uppercase tracking-wider"
-                      typingSpeed={100}
-                      initialDelay={500}
-                      showCursor={true}
-                      cursorCharacter="|"
-                      cursorClassName=""
-                      loop={false}
-                    />
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-[#E6D690] uppercase tracking-wider">
+                      {displayedText}
+                      <span className="animate-pulse">|</span>
+                    </h1>
                   </div>
                 </div>
                 

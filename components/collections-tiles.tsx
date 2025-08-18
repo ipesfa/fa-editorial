@@ -39,13 +39,14 @@ export function CollectionsTiles() {
     icon: iconMap[coleccion.slug as keyof typeof iconMap] || BookOpen,
   }))
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(allCollections.length / 3))
-    }, 4000)
+  // Intervalo automático desactivado para mejorar rendimiento
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(allCollections.length / 3))
+  //   }, 4000)
 
-    return () => clearInterval(interval)
-  }, [allCollections.length])
+  //   return () => clearInterval(interval)
+  // }, [allCollections.length])
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % Math.ceil(allCollections.length / 3))
@@ -78,8 +79,7 @@ export function CollectionsTiles() {
                 return (
                   <div
                     key={`${coleccion.id}-${currentIndex}`}
-                    className="group cursor-pointer animate-in slide-in-from-right-4 duration-500"
-                    style={{ animationDelay: `${index * 100}ms` }}
+                    className="group cursor-pointer"
                   >
                     <Link href={`/fa-editorial/colecciones/${coleccion.slug}`}>
                       <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 min-h-[160px] sm:min-h-[192px] flex flex-col justify-center items-center text-center transition-all duration-300 hover:scale-105">
