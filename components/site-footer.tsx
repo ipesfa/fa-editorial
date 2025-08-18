@@ -6,81 +6,78 @@ export function SiteFooter() {
   return (
     <footer className="bg-black text-white">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="py-6 sm:py-8">
-          {/* Contenido principal - Optimizado para móvil */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start mb-6 sm:mb-8 space-y-6 lg:space-y-0">
-            {/* Lado izquierdo: Logos y texto descriptivo */}
-            <div className="w-full lg:w-auto">
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-3">
-                <Image
-                  src="/fa-blanco.png"
-                  alt="FA Editorial"
-                  width={120}
-                  height={40}
-                  className="h-10 sm:h-12 w-auto object-contain"
-                />
-                <Link href="https://ipesfa-ushuaia.edu.ar/" target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/fa-ipes.png"
-                    alt="IPES Florentino Ameghino"
-                    width={120}
-                    height={40}
-                    className="h-10 sm:h-12 w-auto object-contain hover:opacity-80 transition-opacity"
-                  />
-                </Link>
-                <Link href="https://revista-institucional.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/revista.png"
-                    alt="Revista"
-                    width={120}
-                    height={40}
-                    className="h-8 sm:h-9 w-auto object-contain hover:opacity-80 transition-opacity"
-                  />
-                </Link>
+        <div className="py-12 sm:py-16">
+          {/* Sección superior - Información de contacto y redes sociales */}
+          <div className="flex flex-col md:flex-row justify-between items-start mb-8">
+            {/* Lado izquierdo - Información de contacto */}
+            <div className="mb-6 md:mb-0 flex flex-col items-start">
+              <div className="text-sm font-semibold uppercase tracking-wider text-white/80 mb-3">
+                DÓNDE ENCONTRARNOS
               </div>
-              <p className="text-xs sm:text-sm text-white/80 font-light max-w-xs sm:max-w-none">
-                Descubrí las mejores publicaciones académicas y culturales
-              </p>
+              <div className="text-base text-white">
+                faeditorial@ipesfa-ushuaia.edu.ar
+              </div>
+              <div className="text-base text-white">
+                IPES Florentino Ameghino, Ushuaia TDF
+              </div>
             </div>
 
-            {/* Lado derecho: Instagram y contacto - Optimizado para móvil */}
-            <div className="flex flex-col items-start lg:items-end space-y-4 w-full lg:w-auto">
-              {/* Redes sociales */}
-              <div className="flex space-x-3 sm:space-x-4">
-                <Link
-                  href="https://www.instagram.com/fa_publicaciones/"
-                  className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#E6D690] hover:text-black transition-colors duration-200"
-                  aria-label="Síguenos en Instagram"
-                >
-                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Link>
+            {/* Lado derecho - Redes sociales */}
+            <div className="flex flex-col items-start">
+              <div className="text-sm font-semibold uppercase tracking-wider text-white/80 mb-3 ml-4">
+                SÍGUENOS
               </div>
-
-              {/* Información de contacto - Optimizado para móvil */}
-              <div className="flex flex-col gap-y-2 sm:gap-y-1 items-start lg:items-end">
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-[#E6D690] flex-shrink-0" />
-                  <a 
-                    href="mailto:faeditorial@ipesfa-ushuaia.edu.ar"
-                    className="text-xs sm:text-sm hover:text-[#E6D690] transition-colors duration-200 break-all"
-                  >
-                    faeditorial@ipesfa-ushuaia.edu.ar
-                  </a>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-[#E6D690] flex-shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm leading-relaxed">
-                    IPES Florentino Ameghino, Ushuaia TDF
-                  </span>
-                </div>
-              </div>
+              <Link
+                href="https://www.instagram.com/fa_publicaciones/"
+                className="text-base text-white hover:text-[#E6D690] transition-colors duration-200 block w-full text-left"
+                aria-label="Síguenos en Instagram"
+              >
+                Instagram
+              </Link>
             </div>
           </div>
 
-          {/* Copyright - Centrado y optimizado para móvil */}
-          <div className="border-t border-white/20 pt-4 sm:pt-6 flex justify-center">
-            <div className="text-xs sm:text-sm text-white/80 text-center">
-              © 2025 FA Editorial. Todos los derechos reservados.
+          {/* Sección media - Logos institucionales a la izquierda */}
+          <div className="flex flex-wrap justify-start items-center gap-12 mb-8">
+            <div>
+              <Image
+                src="/fa-blanco.png"
+                alt="FA Editorial"
+                width={120}
+                height={40}
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+            <div>
+              <Link href="https://ipesfa-ushuaia.edu.ar/" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="/fa-ipes.png"
+                  alt="IPES Florentino Ameghino"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto object-contain hover:opacity-80 transition-opacity"
+                />
+              </Link>
+            </div>
+            <div>
+              <Link href="https://revista-institucional.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="/revista.png"
+                  alt="Revista"
+                  width={120}
+                  height={40}
+                  className="h-7 w-auto object-contain hover:opacity-80 transition-opacity"
+                />
+              </Link>
+            </div>
+          </div>
+
+          {/* Sección inferior - Copyright */}
+          <div className="border-t border-white/20 pt-6">
+            <div className="text-center">
+              <div className="text-sm text-white/80">
+                © 2025 FA Editorial. Todos los derechos reservados.
+              </div>
             </div>
           </div>
         </div>

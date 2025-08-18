@@ -30,7 +30,7 @@ export const autores: Autor[] = [
   },
   {
     id: "4",
-    nombre: "Larrondo Luciana Helena",
+    nombre: "Luciana Larrondo",
     area: "Licenciada en Educación Secundaria",
     bioCorta: "Licenciada en Educación Secundaria con experiencia en pedagogía y formación docente.",
     foto: "👤",

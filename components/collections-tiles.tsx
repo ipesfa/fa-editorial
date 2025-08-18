@@ -71,7 +71,7 @@ export function CollectionsTiles() {
 
           <div className="relative">
             {/* Grid optimizado para móvil */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 min-h-[180px] sm:min-h-[200px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 min-h-[180px] sm:min-h-[220px]">
               {getVisibleCollections().map((coleccion, index) => {
                 const IconComponent = coleccion.icon
 
@@ -82,9 +82,9 @@ export function CollectionsTiles() {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <Link href={`/fa-editorial/colecciones/${coleccion.slug}`}>
-                      <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 h-40 sm:h-48 flex flex-col justify-center items-center text-center transition-all duration-300 hover:scale-105">
-                        <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 mb-3 sm:mb-4 text-gray-600 group-hover:text-[#D4C078] transition-colors duration-300" />
-                        <h3 className="font-sans text-xs sm:text-sm font-medium tracking-wide leading-tight text-black">
+                      <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 min-h-[160px] sm:min-h-[192px] flex flex-col justify-center items-center text-center transition-all duration-300 hover:scale-105">
+                        <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 mb-3 sm:mb-4 text-gray-600 group-hover:text-[#D4C078] transition-colors duration-300 flex-shrink-0" />
+                        <h3 className="font-sans text-xs sm:text-sm font-medium tracking-wide leading-tight text-black break-words">
                           {coleccion.nombre}
                         </h3>
                       </div>

@@ -65,7 +65,7 @@ export default function ColeccionesPage() {
                     href={`/fa-editorial/colecciones/${coleccion.slug}`}
                     className="group block"
                   >
-                    <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-2xl p-6 h-96 flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-2xl p-6 h-[420px] flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-lg">
                       {/* Header con icono y título */}
                       <div className="text-center mb-4">
                         <div className="mb-4">
@@ -78,13 +78,13 @@ export default function ColeccionesPage() {
                       
                       {/* Descripción con scroll si es necesario */}
                       <div className="flex-1 overflow-hidden">
-                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-8 group-hover:line-clamp-none group-hover:overflow-y-auto group-hover:pr-2 text-justify">
+                        <p className="text-sm text-gray-600 leading-relaxed overflow-y-auto pr-2 text-justify">
                           {coleccion.descripcion}
                         </p>
                       </div>
                       
                       {/* Footer con botón */}
-                      <div className="mt-4 pt-4 border-t border-gray-100 flex-shrink-0">
+                      <div className="mt-6 pt-4 border-t border-gray-100 flex-shrink-0">
                         <div className="flex items-center justify-center text-[#D4C078] font-medium text-sm group-hover:translate-x-1 transition-transform duration-200">
                           Ver colección
                           <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
