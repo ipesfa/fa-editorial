@@ -29,7 +29,7 @@ export const libros: Libro[] = [
       "Qué acontece en esos oscuros segundos que continúan, irremediablemente, al rotar permanente de la luz del faro. Ondulaciones de las mareas, las visitas que fluctúan, las figuras y sombras que emergen detrás de cada oleaje. La experiencia vívida, las sensibilidades y la inercia de lo cotidiano, se entretejen en la novela de Miguel Fanchovich para desplegar las condiciones de vida de los trabajadores de un faro al sur del mar argentino.",
     tematicas: ["Literatura", "Novela", "Argentina"],
     coleccion: "Literarias",
-    isbn: "En trámite",
+    isbn: "978-631-91361-0-4",
     paginas: 65,
     formatos: [
       { tipo: "PDF", url: "/downloads/FAREROS.pdf", size: "9.4MB" },
