@@ -32,8 +32,8 @@ export const libros: Libro[] = [
     isbn: "En trámite",
     paginas: 65,
     formatos: [
-      { tipo: "PDF", url: "/downloads/fareros.pdf", size: "9.4MB" },
-      { tipo: "EPUB", url: "/downloads/fareros.epub", size: "No disponible" },
+      { tipo: "PDF", url: "/downloads/FAREROS.pdf", size: "9.4MB" },
+      { tipo: "EPUB", url: "/downloads/FAREROS.epub", size: "No disponible" },
     ],
     openAccess: true,
   },
