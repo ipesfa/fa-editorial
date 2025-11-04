@@ -217,7 +217,7 @@ export default async function BookPage({ params }: BookPageProps) {
                                 {formato.tipo} - {formato.size}
                               </div>
                             ) : (
-                              <Link href={formato.url}>
+                              <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${formato.url}`}>
                                 <Download className="w-4 h-4 mr-2" />
                                 Descargar {formato.tipo}
                                 {formato.size && (
