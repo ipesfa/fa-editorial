@@ -32,7 +32,7 @@ export const libros: Libro[] = [
     isbn: "978-631-91361-0-4",
     paginas: 65,
     formatos: [
-      { tipo: "PDF", url: "/downloads/FAREROS.pdf", size: "9.4MB" },
+      { tipo: "PDF", url: "/downloads/fareros.pdf", size: "9.4MB" },
       { tipo: "EPUB", url: "/downloads/FAREROS.epub", size: "No disponible" },
     ],
     openAccess: true,
