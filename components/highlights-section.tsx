@@ -114,7 +114,7 @@ export function HighlightsSection() {
                 
                 {latestBook.openAccess && latestBook.formatos && (
                   <Link
-                    href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? (process.env.NODE_ENV === 'production' ? '/fa-editorial' : '')}${latestBook.formatos[0].url}`}
+                    href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${latestBook.formatos[0].url}`}
                     className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium disabled:pointer-events-none disabled:opacity-50 border shadow-xs h-11 sm:h-12 has-[&>svg]:px-4 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 px-6 sm:px-8 py-3 text-sm sm:text-base bg-white rounded-none tracking-wide hover:shadow-lg hover:-translate-y-0.5"
                   >
                     <Download className="w-4 h-4" />
