@@ -6,12 +6,15 @@ import { CollectionsTiles } from '@/components/collections-tiles';
 import { AuthorsGrid } from '@/components/authors-grid';
 import { SiteFooter } from '@/components/site-footer';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 export default function FAEditorialHomePage() {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const text = "EDITORIAL";
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -24,8 +27,38 @@ export default function FAEditorialHomePage() {
     }
   }, [currentIndex, text]);
 
+  // Abrir popup automáticamente al entrar al home
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
+
   return (
     <>
+      {/* Popup Certamen Niní Bernardello */}
+      <Dialog open={showPopup} onOpenChange={setShowPopup}>
+        <DialogContent
+          showCloseButton={false}
+          className="max-w-sm rounded-xl p-0 shadow-xl bg-black/95 text-neutral-200 border border-[#E6D690] ring-0 focus:outline-none focus-visible:outline-none top-[25%]"
+        >
+          <div className="flex items-start gap-3 px-4 py-3">
+            <div className="flex-1 min-w-0">
+              <DialogTitle className="text-[14px] sm:text-[15px] font-semibold text-[#E6D690] tracking-wide leading-snug">
+                1er Certamen Provincial de Literatura Niní Bernardello
+              </DialogTitle>
+              <DialogDescription className="mt-1 text-[13px] text-neutral-300/90 leading-relaxed">
+                Bases, condiciones y cronograma de participación.
+              </DialogDescription>
+              <div className="mt-2">
+                <Link href="/certamen-nini-bernardello" className="text-[#E6D690] underline underline-offset-4 decoration-[#E6D690] hover:text-[#d1c07a] text-[13px] inline-flex items-center gap-1">
+                  Ver bases y condiciones
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       <SiteHeader />
       <main>
         {/* Hero Section - Optimizado para móvil */}
