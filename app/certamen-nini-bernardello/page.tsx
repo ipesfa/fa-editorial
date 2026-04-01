@@ -146,6 +146,24 @@ export default function CertamenNiniBernardelloPage() {
                   </ul>
                 </section>
 
+                <div className="h-px bg-[#E6D690]/60" />
+
+                {/* Premios del certamen */}
+                <section className="relative overflow-hidden rounded-2xl border-2 border-[#E6D690] bg-gradient-to-b from-[#E6D690]/15 to-white p-5 sm:p-6 shadow-lg">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(230,214,144,0.35),transparent_55%)]" />
+                  <div className="pointer-events-none absolute left-0 top-0 h-full w-1.5 bg-[#E6D690]" />
+                  <h2 className="relative text-lg sm:text-xl font-semibold text-black mb-3">Premios del certamen</h2>
+                  <ul className="list-disc pl-5 leading-7 text-black/90">
+                    <li>Las obras de los autores ganadores serán publicadas en FA Editorial.</li>
+                    <li>
+                      En el caso de los cuentos y de la poesía, se publicará una antología que reúna los trabajos en orden de mérito según la evaluación realizada por el jurado.
+                    </li>
+                    <li>
+                      Aquellos trabajos que no se publiquen según el criterio del jurado, obtendrán un diploma por su participación y serán considerados para otros proyectos de la editorial en caso de que los autores así lo consideren.
+                    </li>
+                  </ul>
+                </section>
+
                 {/* Contacto */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <p className="text-black/80">

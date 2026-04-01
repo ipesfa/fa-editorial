@@ -33,17 +33,26 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-300 hover:text-[#E6D690] transition-colors duration-200 text-sm font-medium tracking-wide"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <nav className="flex items-center space-x-6 xl:space-x-8">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-300 hover:text-[#E6D690] transition-colors duration-200 text-sm font-medium tracking-wide"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+
+            <Link
+              href="/certamen-nini-bernardello"
+              className="inline-flex items-center justify-center rounded-xl border border-[#E6D690] px-4 py-2 text-sm font-semibold tracking-wide text-[#E6D690] hover:bg-[#E6D690] hover:text-black transition-colors shadow-sm"
+            >
+              Certamen
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-3 sm:space-x-4">
@@ -81,6 +90,14 @@ export function SiteHeader() {
                   {item.name}
                 </Link>
               ))}
+
+              <Link
+                href="/certamen-nini-bernardello"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-black bg-[#E6D690] hover:bg-[#E6D690]/90 transition-colors duration-200 text-base font-semibold tracking-wide py-3 px-3 rounded-lg"
+              >
+                Certamen
+              </Link>
             </nav>
           </div>
         )}
