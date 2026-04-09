@@ -5,8 +5,24 @@ import { Calendar, Globe, Sparkles, Download } from "lucide-react"
 import { libros } from "@/data/libros"
 
 export function HighlightsSection() {
-  // Obtener la última publicación (el libro más reciente)
-  const latestBook = libros[0] // Asumiendo que el primer libro es el más reciente
+  // Obtener la última publicación (por año y, ante empate, por id numérico)
+  const latestBook = [...libros].sort((a, b) => {
+    if (b.anio !== a.anio) return b.anio - a.anio
+    const aId = Number.parseInt(a.id, 10)
+    const bId = Number.parseInt(b.id, 10)
+    if (Number.isNaN(aId) || Number.isNaN(bId)) return 0
+    return bId - aId
+  })[0]
+
+  if (!latestBook) return null
+
+  const homeResumen =
+    latestBook.resumen.length > 320
+      ? `${latestBook.resumen
+          .slice(0, 320)
+          .replace(/\s+\S*$/, "")
+          .trim()}…`
+      : latestBook.resumen
 
   return (
     <section className="bg-gradient-to-r from-gray-50 to-white py-12 sm:py-16 lg:py-20 xl:py-32 relative overflow-hidden">
@@ -21,18 +37,18 @@ export function HighlightsSection() {
           </div>
 
           {/* Layout optimizado para móvil */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-20 items-center lg:items-start">
             {/* Columna izquierda: Portada mejorada */}
             <div className="lg:col-span-2 order-2 lg:order-1">
-              <div className="relative max-w-[280px] sm:max-w-[320px] lg:max-w-[350px] mx-auto lg:mx-0">
+              <div className="relative max-w-[320px] sm:max-w-[380px] lg:max-w-[420px] mx-auto -mt-4 sm:-mt-6 lg:mt-14">
                 <div className="relative group cursor-pointer">
                   <div className="aspect-[3/4] relative bg-white border border-gray-200/50 rounded-lg shadow-lg z-30 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 sm:group-hover:-translate-y-4 group-hover:rotate-1 sm:group-hover:rotate-3 overflow-hidden">
                     <Image
-                      src={latestBook.portada}
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${latestBook.portada}`}
                       alt={`Portada de ${latestBook.titulo}`}
-                      width={350}
-                      height={467}
-                      className="w-full h-full object-cover"
+                      width={420}
+                      height={560}
+                      className="w-full h-full object-contain bg-white"
                       priority
                     />
                     {/* Efecto de brillo */}
@@ -59,7 +75,9 @@ export function HighlightsSection() {
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight tracking-tight">
                   {latestBook.titulo}
                 </h1>
-                <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-2xl text-justify">{latestBook.resumen}</p>
+                <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-2xl text-justify">
+                  {homeResumen}
+                </p>
               </div>
 
               <div className="pt-2">

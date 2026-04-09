@@ -94,11 +94,11 @@ export default async function BookPage({ params }: BookPageProps) {
               <div className="w-64 sm:w-80 max-w-full">
                 <div className="aspect-[3/4] w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
                   <Image
-                    src={libro.portada || "/placeholder.svg"}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${libro.portada || "/placeholder.svg"}`}
                     alt={`Portada de ${libro.titulo}`}
                     width={320}
                     height={427}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain bg-white p-2"
                     priority
                   />
                 </div>
@@ -174,11 +174,10 @@ export default async function BookPage({ params }: BookPageProps) {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <div>
                       <h3 className="text-xs uppercase text-gray-500 font-medium mb-2">AUTORES</h3>
-                      {libro.autores.map((autor) => (
-                        <p key={autor} className="text-black underline cursor-pointer hover:text-[#E6D690] transition-colors text-sm sm:text-base">
-                          {autor}
-                        </p>
-                      ))}
+                      <p className="text-black text-sm sm:text-base">
+                        {libro.autores.slice(0, 2).join(", ")}
+                        {libro.autores.length > 2 ? ` y ${libro.autores.length - 2} más` : ""}
+                      </p>
                     </div>
                     {libro.coleccion && (
                       <div>

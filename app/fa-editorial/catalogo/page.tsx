@@ -184,11 +184,17 @@ export default function CatalogoPage() {
                 {filteredBooks.map((libro) => (
                   <Card key={libro.id} className="group hover:shadow-xl transition-all duration-300 border-[#E6D690]/20">
                     <CardHeader className="pb-4">
-                      <div className="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+                      <div className="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg bg-white">
                         <img
-                          src={libro.portada}
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${libro.portada}`}
                           alt={libro.titulo}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-contain p-2 group-hover:scale-[1.02] transition-transform duration-300"
+                          onError={(e) => {
+                            const img = e.currentTarget
+                            if (img.dataset.fallbackApplied === "1") return
+                            img.dataset.fallbackApplied = "1"
+                            img.src = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/placeholder.jpg`
+                          }}
                         />
                         {libro.openAccess && (
                           <Badge className="absolute top-2 right-2 bg-green-500 text-white text-xs">
@@ -240,7 +246,7 @@ export default function CatalogoPage() {
                           
                           {libro.formatos && libro.formatos.length > 0 && (
                             <Button size="sm" variant="outline" className="border-[#E6D690] text-[#E6D690] hover:bg-[#E6D690] hover:text-black text-xs sm:text-sm" asChild>
-                              <Link href={libro.formatos[0].url}>
+                              <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${libro.formatos[0].url}`}>
                                 <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                                 Descargar
                                 {libro.formatos[0].size && (

@@ -4,8 +4,14 @@ import { Button } from "@/components/ui/button"
 import { libros } from "@/data/libros"
 
 export function FeaturedBook() {
-  // Obtener el libro más reciente (último en el array)
-  const featuredBook = libros[0] // El primer libro es el más reciente según nuestros datos
+  // Obtener el libro más reciente (por año y, ante empate, por id numérico)
+  const featuredBook = [...libros].sort((a, b) => {
+    if (b.anio !== a.anio) return b.anio - a.anio
+    const aId = Number.parseInt(a.id, 10)
+    const bId = Number.parseInt(b.id, 10)
+    if (Number.isNaN(aId) || Number.isNaN(bId)) return 0
+    return bId - aId
+  })[0]
 
   if (!featuredBook) return null
 
@@ -25,7 +31,7 @@ export function FeaturedBook() {
               <div className="relative">
                 <div className="aspect-[3/4] w-full max-w-xs lg:max-w-sm">
                   <Image
-                    src={featuredBook.portada || "/placeholder.svg"}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${featuredBook.portada || "/placeholder.svg"}`}
                     alt={`Portada de ${featuredBook.titulo}`}
                     fill
                     className="object-cover rounded-sm shadow-sm"
@@ -69,7 +75,7 @@ export function FeaturedBook() {
                     className="border-foreground text-foreground hover:bg-foreground hover:text-background font-light tracking-wide bg-transparent"
                     asChild
                   >
-                    <Link href={featuredBook.formatos[0].url}>Descargar</Link>
+                    <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${featuredBook.formatos[0].url}`}>Descargar</Link>
                   </Button>
                 )}
               </div>
