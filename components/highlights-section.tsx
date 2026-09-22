@@ -120,7 +120,7 @@ export function HighlightsSection() {
               {/* Botones optimizados para móvil */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8">
                 <Link
-                  href={`/fa-editorial/libro/${latestBook.id}`}
+                  href={`/libro/${latestBook.id}`}
                   className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium disabled:pointer-events-none disabled:opacity-50 border shadow-xs h-11 sm:h-12 has-[&>svg]:px-4 border-black text-black hover:bg-[#E6D690] hover:border-[#E6D690] hover:text-black transition-all duration-300 px-6 sm:px-8 py-3 text-sm sm:text-base bg-transparent rounded-none tracking-wide hover:shadow-lg hover:-translate-y-0.5"
                 >
                   Ver detalles

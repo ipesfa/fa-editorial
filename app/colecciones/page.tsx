@@ -35,7 +35,7 @@ export default function ColeccionesPage() {
             {/* Breadcrumb */}
             <div className="mb-8">
               <Link
-                href="/fa-editorial"
+                href="/"
                 className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
@@ -62,7 +62,7 @@ export default function ColeccionesPage() {
                 return (
                   <Link
                     key={coleccion.id}
-                    href={`/fa-editorial/colecciones/${coleccion.slug}`}
+                    href={`/colecciones/${coleccion.slug}`}
                     className="group block"
                   >
                     <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-2xl p-6 h-[420px] flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-lg">
@@ -109,7 +109,7 @@ export default function ColeccionesPage() {
                   te invitamos a conocer nuestro proceso de envío de proyectos.
                 </p>
                 <Link
-                  href="/fa-editorial/envio-proyectos"
+                  href="/envio-proyectos"
                   className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 text-base font-semibold hover:bg-[#D4C078] hover:text-black transition-all duration-300 tracking-wide rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
                   Enviar proyecto

@@ -81,7 +81,7 @@ export function CollectionsTiles() {
                     key={`${coleccion.id}-${currentIndex}`}
                     className="group cursor-pointer"
                   >
-                    <Link href={`/fa-editorial/colecciones/${coleccion.slug}`}>
+                    <Link href={`/colecciones/${coleccion.slug}`}>
                       <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 min-h-[160px] sm:min-h-[192px] flex flex-col justify-center items-center text-center transition-all duration-300 hover:scale-105">
                         <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 mb-3 sm:mb-4 text-gray-600 group-hover:text-[#D4C078] transition-colors duration-300 flex-shrink-0" />
                         <h3 className="font-sans text-xs sm:text-sm font-medium tracking-wide leading-tight text-black break-words">
@@ -134,7 +134,7 @@ export function CollectionsTiles() {
           {/* Enlace optimizado para móvil */}
           <div className="flex justify-center sm:justify-end">
             <Link 
-              href="/fa-editorial/colecciones" 
+              href="/colecciones" 
               className="text-gray-700 hover:text-[#D4C078] p-0 h-auto font-medium tracking-wide group text-lg sm:text-xl lg:text-2xl flex items-center gap-2"
             >
               Nuestras Colecciones

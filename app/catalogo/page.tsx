@@ -238,7 +238,7 @@ export default function CatalogoPage() {
 
                         <div className="flex flex-col sm:flex-row gap-2 pt-2">
                           <Button asChild size="sm" className="flex-1 bg-[#E6D690] text-black hover:bg-[#D4C078] text-xs sm:text-sm">
-                            <Link href={`/fa-editorial/libro/${libro.id}`}>
+                            <Link href={`/libro/${libro.id}`}>
                               <Eye className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                               Ver detalles
                             </Link>

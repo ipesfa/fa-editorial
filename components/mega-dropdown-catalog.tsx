@@ -112,7 +112,7 @@ export function MegaDropdownCatalog({ isOpen, onClose }: MegaDropdownCatalogProp
             <h3 className="font-serif text-lg font-semibold text-foreground">Enlaces rápidos</h3>
             <div className="space-y-3">
               <Link
-                href="/fa-editorial/novedades"
+                href="/novedades"
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-200 underline-animated"
                 onClick={onClose}
               >
@@ -120,7 +120,7 @@ export function MegaDropdownCatalog({ isOpen, onClose }: MegaDropdownCatalogProp
                 <span>Novedades 2024</span>
               </Link>
               <Link
-                href="/fa-editorial/acceso-abierto"
+                href="/acceso-abierto"
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-200 underline-animated"
                 onClick={onClose}
               >
@@ -128,7 +128,7 @@ export function MegaDropdownCatalog({ isOpen, onClose }: MegaDropdownCatalogProp
                 <span>Acceso abierto</span>
               </Link>
               <Link
-                href="/fa-editorial/mas-descargados"
+                href="/mas-descargados"
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-200 underline-animated"
                 onClick={onClose}
               >
@@ -137,7 +137,7 @@ export function MegaDropdownCatalog({ isOpen, onClose }: MegaDropdownCatalogProp
               </Link>
               <div className="pt-2 border-t border-border">
                 <Link
-                  href="/fa-editorial/catalogo"
+                  href="/catalogo"
                   className="inline-flex items-center text-primary font-medium hover:underline"
                   onClick={onClose}
                 >

@@ -44,7 +44,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
             {/* Breadcrumb */}
             <div className="mb-8">
               <Link
-                href="/fa-editorial/colecciones"
+                href="/colecciones"
                 className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
@@ -128,7 +128,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                     Muy pronto tendremos contenido disponible.
                   </p>
                   <Link
-                    href="/fa-editorial/envio-proyectos"
+                    href="/envio-proyectos"
                     className="inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 text-base font-semibold hover:bg-[#D4C078] hover:text-black transition-all duration-300 tracking-wide rounded-lg"
                   >
                     Enviar proyecto
@@ -153,7 +153,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
-                    href="/fa-editorial/envio-proyectos"
+                    href="/envio-proyectos"
                     className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 text-base font-semibold hover:bg-[#D4C078] hover:text-black transition-all duration-300 tracking-wide rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                   >
                     Enviar proyecto
@@ -162,7 +162,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                     </svg>
                   </Link>
                   <Link
-                    href="/fa-editorial/colecciones"
+                    href="/colecciones"
                     className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-8 py-4 text-base font-semibold hover:border-[#D4C078] hover:text-[#D4C078] transition-all duration-300 tracking-wide rounded-lg"
                   >
                     Ver otras colecciones

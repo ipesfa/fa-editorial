@@ -9,7 +9,7 @@ interface BookCardProps {
 
 export function BookCard({ libro }: BookCardProps) {
   return (
-    <Link href={`/fa-editorial/libro/${libro.id}`} className="group block">
+    <Link href={`/libro/${libro.id}`} className="group block">
       <div className="space-y-4">
         {/* Portada con hover effect */}
         <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-muted">

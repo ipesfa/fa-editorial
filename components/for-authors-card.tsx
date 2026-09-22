@@ -27,7 +27,7 @@ export function ForAuthorsCard() {
               {/* Botones de acción */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                  <Link href="/fa-editorial/directrices">
+                  <Link href="/directrices">
                     <FileText className="w-4 h-4 mr-2" />
                     Ver directrices
                   </Link>
@@ -39,7 +39,7 @@ export function ForAuthorsCard() {
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
                   asChild
                 >
-                  <Link href="/fa-editorial/envio-proyectos">
+                  <Link href="/envio-proyectos">
                     <Send className="w-4 h-4 mr-2" />
                     Enviar propuesta
                   </Link>
@@ -49,7 +49,7 @@ export function ForAuthorsCard() {
               {/* Link adicional */}
               <div className="pt-4 border-t border-border">
                 <Link
-                  href="/fa-editorial/plantilla-propuesta.pdf"
+                  href="/plantilla-propuesta.pdf"
                   className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200 underline-animated"
                 >
                   <Download className="w-4 h-4 mr-2" />

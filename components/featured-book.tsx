@@ -65,7 +65,7 @@ export function FeaturedBook() {
                   className="bg-foreground hover:bg-foreground/90 text-background font-light tracking-wide"
                   asChild
                 >
-                  <Link href={`/fa-editorial/libro/${featuredBook.id}`}>Ver libro</Link>
+                  <Link href={`/libro/${featuredBook.id}`}>Ver libro</Link>
                 </Button>
 
                 {featuredBook.openAccess && featuredBook.formatos && (

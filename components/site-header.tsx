@@ -9,11 +9,11 @@ export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuItems = [
-    { name: "Inicio", href: "/fa-editorial" },
-    { name: "Quienes somos", href: "/fa-editorial/quienes-somos" },
-    { name: "Catálogo", href: "/fa-editorial/catalogo" },
-    { name: "Colecciones", href: "/fa-editorial/colecciones" },
-    { name: "Envío de proyectos", href: "/fa-editorial/envio-proyectos" },
+    { name: "Inicio", href: "/" },
+    { name: "Quienes somos", href: "/quienes-somos" },
+    { name: "Catálogo", href: "/catalogo" },
+    { name: "Colecciones", href: "/colecciones" },
+    { name: "Envío de proyectos", href: "/envio-proyectos" },
   ]
 
   return (
@@ -21,7 +21,7 @@ export function SiteHeader() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex h-14 sm:h-16 items-center justify-between">
           {/* Logo y marca */}
-          <Link href="/fa-editorial" className="flex items-center space-x-2 sm:space-x-3">
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
             <Image
               src="/fa-blanco2.png"
               alt="FA Editorial Logo"

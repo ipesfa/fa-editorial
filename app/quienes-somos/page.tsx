@@ -13,7 +13,7 @@ export default function QuienesSomosPage() {
             {/* Breadcrumb */}
             <div className="mb-8">
               <Link
-                href="/fa-editorial"
+                href="/"
                 className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />

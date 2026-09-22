@@ -12,6 +12,21 @@ const nextConfig = {
   },
   // Compresión
   compress: true,
+  // Compatibilidad: las rutas vivían antes bajo /fa-editorial/*
+  async redirects() {
+    return [
+      {
+        source: '/fa-editorial',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/fa-editorial/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

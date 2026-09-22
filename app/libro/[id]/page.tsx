@@ -22,11 +22,11 @@ export default async function BookPage({ params }: BookPageProps) {
   }
 
   const menuItems = [
-    { name: "Inicio", href: "/fa-editorial" },
-    { name: "Quienes somos", href: "/fa-editorial/quienes-somos" },
-    { name: "Catálogo", href: "/fa-editorial/catalogo" },
-    { name: "Colecciones", href: "/fa-editorial/colecciones" },
-    { name: "Envío de proyectos", href: "/fa-editorial/envio-proyectos" },
+    { name: "Inicio", href: "/" },
+    { name: "Quienes somos", href: "/quienes-somos" },
+    { name: "Catálogo", href: "/catalogo" },
+    { name: "Colecciones", href: "/colecciones" },
+    { name: "Envío de proyectos", href: "/envio-proyectos" },
   ]
 
   return (
@@ -35,7 +35,7 @@ export default async function BookPage({ params }: BookPageProps) {
       <header className="sticky top-0 z-50 w-full border-b border-[#D4C078] backdrop-blur-sm" style={{ backgroundColor: '#E6D690' }}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between">
-            <Link href="/fa-editorial" className="flex items-center space-x-2 sm:space-x-3">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
               <Image
                 src="/fa-editorial-logo.png"
                 alt="FA Editorial Logo"
@@ -80,7 +80,7 @@ export default async function BookPage({ params }: BookPageProps) {
             {/* Breadcrumb */}
             <div className="mb-6 sm:mb-8">
               <Link
-                href="/fa-editorial"
+                href="/"
                 className="inline-flex items-center text-black hover:text-white transition-colors duration-200 text-sm sm:text-base"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />

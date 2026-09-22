@@ -170,7 +170,7 @@ export default function CertamenNiniBernardelloPage() {
                     Consultas: <a href="mailto:certamenliterario@ipesfa-ushuaia.edu.ar" className="underline decoration-[#E6D690] underline-offset-4 hover:text-black">certamenliterario@ipesfa-ushuaia.edu.ar</a>
                   </p>
                   <Link
-                    href="/fa-editorial"
+                    href="/"
                     className="inline-flex items-center justify-center px-6 py-3 text-sm sm:text-base font-medium tracking-wide text-black border border-[#E6D690] hover:bg-black hover:text-[#E6D690] transition-colors rounded-xl shadow-sm"
                   >
                     Volver al inicio
