@@ -76,7 +76,7 @@ export function SiteFooter() {
           <div className="border-t border-white/20 pt-4 sm:pt-6">
             <div className="text-center">
               <div className="text-xs sm:text-sm text-white/80">
-                © 2025 FA Editorial. Todos los derechos reservados.
+                © {new Date().getFullYear()} FA Editorial. Todos los derechos reservados.
               </div>
             </div>
           </div>
