@@ -3,20 +3,18 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { 
-  BookOpen, 
-  Users, 
-  Lightbulb, 
-  Globe, 
-  MessageSquare, 
-  Calculator, 
-  ChevronLeft, 
-  ChevronRight,
+import {
+  BookOpen,
+  Users,
+  Lightbulb,
+  Globe,
+  CaretLeft,
+  CaretRight,
   GraduationCap,
   Leaf,
-  BookText,
-  Languages
-} from "lucide-react"
+  BookOpenText,
+  Translate
+} from "@phosphor-icons/react"
 import { colecciones } from "@/data/colecciones"
 
 export function CollectionsTiles() {
@@ -27,9 +25,9 @@ export function CollectionsTiles() {
     "practicas-y-saberes": GraduationCap,
     "materiales-educativos": BookOpen,
     "historias": Globe,
-    "literarias": BookText,
+    "literarias": BookOpenText,
     "culturas": Users,
-    "lenguajes": Languages,
+    "lenguajes": Translate,
     "territorios-y-biodiversidad": Leaf,
     "educacion-en-debate": Lightbulb,
   }
@@ -83,7 +81,9 @@ export function CollectionsTiles() {
                   >
                     <Link href={`/colecciones/${coleccion.slug}`}>
                       <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 min-h-[160px] sm:min-h-[192px] flex flex-col justify-center items-center text-center transition-all duration-300 hover:scale-105">
-                        <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 mb-3 sm:mb-4 text-gray-600 group-hover:text-[#D4C078] transition-colors duration-300 flex-shrink-0" />
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 mb-3 sm:mb-4 rounded-full bg-[#E6D690] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+                          <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-black" weight="duotone" />
+                        </div>
                         <h3 className="font-sans text-xs sm:text-sm font-medium tracking-wide leading-tight text-black break-words">
                           {coleccion.nombre}
                         </h3>
@@ -102,14 +102,14 @@ export function CollectionsTiles() {
                   className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 w-8 h-8 sm:w-10 sm:h-10 bg-white/70 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-500 hover:text-[#D4C078] hover:bg-white/90 transition-all duration-200 shadow-md"
                   aria-label="Anterior"
                 >
-                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <CaretLeft className="w-4 h-4 sm:w-5 sm:h-5" weight="light" />
                 </button>
                 <button
                   onClick={nextSlide}
                   className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 w-8 h-8 sm:w-10 sm:h-10 bg-white/70 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-500 hover:text-[#D4C078] hover:bg-white/90 transition-all duration-200 shadow-md"
                   aria-label="Siguiente"
                 >
-                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <CaretRight className="w-4 h-4 sm:w-5 sm:h-5" weight="light" />
                 </button>
               </>
             )}

@@ -3,7 +3,19 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { BookCard } from "@/components/book-card"
-import { ArrowLeft, BookOpen, Users, Calendar, FileText } from "lucide-react"
+import {
+  ArrowLeft,
+  BookOpen,
+  Users,
+  Calendar,
+  FileText,
+  GraduationCap,
+  Globe,
+  BookOpenText,
+  Translate,
+  Leaf,
+  Lightbulb,
+} from "@phosphor-icons/react/dist/ssr"
 import { colecciones } from "@/data/colecciones"
 import { libros } from "@/data/libros"
 
@@ -14,14 +26,14 @@ interface CollectionPageProps {
 }
 
 const iconMap = {
-  "practicas-y-saberes": "🎓",
-  "materiales-educativos": "📚",
-  "historias": "🌍",
-  "literarias": "📖",
-  "culturas": "👥",
-  "lenguajes": "🗣️",
-  "territorios-y-biodiversidad": "🌱",
-  "educacion-en-debate": "💡",
+  "practicas-y-saberes": GraduationCap,
+  "materiales-educativos": BookOpen,
+  "historias": Globe,
+  "literarias": BookOpenText,
+  "culturas": Users,
+  "lenguajes": Translate,
+  "territorios-y-biodiversidad": Leaf,
+  "educacion-en-debate": Lightbulb,
 }
 
 export default async function CollectionPage({ params }: CollectionPageProps) {
@@ -33,7 +45,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
   }
 
   const librosDeColeccion = libros.filter((libro) => libro.coleccion === coleccion.nombre)
-  const emoji = iconMap[slug as keyof typeof iconMap] || "📚"
+  const CollectionIcon = iconMap[slug as keyof typeof iconMap] || BookOpen
 
   return (
     <div className="min-h-screen bg-background">
@@ -47,15 +59,17 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 href="/colecciones"
                 className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200"
               >
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeft className="w-4 h-4 mr-2" weight="light" />
                 Volver a colecciones
               </Link>
             </div>
 
             {/* Header de la colección */}
             <div className="text-center mb-16">
-              <div className="mb-6">
-                <span className="text-6xl lg:text-8xl">{emoji}</span>
+              <div className="mb-6 flex justify-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 lg:w-28 lg:h-28 rounded-full bg-[#E6D690]">
+                  <CollectionIcon className="w-9 h-9 lg:w-12 lg:h-12 text-black" weight="duotone" />
+                </div>
               </div>
               <h1 className="font-serif text-4xl lg:text-6xl font-bold text-foreground mb-6">
                 {coleccion.nombre}
@@ -69,28 +83,28 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
             {/* Estadísticas de la colección */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
               <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 text-center">
-                <BookOpen className="w-8 h-8 mx-auto mb-3 text-[#D4C078]" />
+                <BookOpen className="w-8 h-8 mx-auto mb-3 text-[#D4C078]" weight="light" />
                 <div className="text-2xl font-bold text-foreground mb-1">
                   {librosDeColeccion.length}
                 </div>
                 <div className="text-sm text-muted-foreground">Publicaciones</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 text-center">
-                <Users className="w-8 h-8 mx-auto mb-3 text-[#D4C078]" />
+                <Users className="w-8 h-8 mx-auto mb-3 text-[#D4C078]" weight="light" />
                 <div className="text-2xl font-bold text-foreground mb-1">
                   {librosDeColeccion.length > 0 ? Math.ceil(librosDeColeccion.length * 1.5) : 0}
                 </div>
                 <div className="text-sm text-muted-foreground">Autores</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 text-center">
-                <Calendar className="w-8 h-8 mx-auto mb-3 text-[#D4C078]" />
+                <Calendar className="w-8 h-8 mx-auto mb-3 text-[#D4C078]" weight="light" />
                 <div className="text-2xl font-bold text-foreground mb-1">
                   {new Date().getFullYear()}
                 </div>
                 <div className="text-sm text-muted-foreground">Año actual</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 text-center">
-                <FileText className="w-8 h-8 mx-auto mb-3 text-[#D4C078]" />
+                <FileText className="w-8 h-8 mx-auto mb-3 text-[#D4C078]" weight="light" />
                 <div className="text-2xl font-bold text-foreground mb-1">
                   Activa
                 </div>
@@ -117,8 +131,10 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 </div>
               ) : (
                 <div className="text-center py-16">
-                  <div className="mb-6">
-                    <span className="text-6xl">📚</span>
+                  <div className="mb-6 flex justify-center">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-200/50">
+                      <BookOpen className="w-7 h-7 text-[#D4C078]" weight="light" />
+                    </div>
                   </div>
                   <h3 className="text-2xl font-semibold text-foreground mb-4">
                     Próximamente

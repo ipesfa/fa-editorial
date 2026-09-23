@@ -1,26 +1,26 @@
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { ArrowLeft } from "lucide-react"
 import { colecciones } from "@/data/colecciones"
-import { 
+import {
+  ArrowLeft,
   GraduationCap,
   BookOpen,
   Globe,
-  BookText,
+  BookOpenText,
   Users,
-  Languages,
+  Translate,
   Leaf,
   Lightbulb
-} from "lucide-react"
+} from "@phosphor-icons/react/dist/ssr"
 
 const iconMap = {
   "practicas-y-saberes": GraduationCap,
   "materiales-educativos": BookOpen,
   "historias": Globe,
-  "literarias": BookText,
+  "literarias": BookOpenText,
   "culturas": Users,
-  "lenguajes": Languages,
+  "lenguajes": Translate,
   "territorios-y-biodiversidad": Leaf,
   "educacion-en-debate": Lightbulb,
 }
@@ -38,7 +38,7 @@ export default function ColeccionesPage() {
                 href="/"
                 className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200"
               >
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeft className="w-4 h-4 mr-2" weight="light" />
                 Volver al inicio
               </Link>
             </div>
@@ -68,8 +68,10 @@ export default function ColeccionesPage() {
                     <div className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#E6D690] hover:bg-white rounded-2xl p-6 h-[420px] flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-lg">
                       {/* Header con icono y título */}
                       <div className="text-center mb-4">
-                        <div className="mb-4">
-                          <IconComponent className="w-10 h-10 mx-auto text-gray-600 group-hover:text-[#D4C078] transition-colors duration-300" />
+                        <div className="mb-4 flex justify-center">
+                          <div className="w-16 h-16 rounded-full bg-[#E6D690] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                            <IconComponent className="w-8 h-8 text-black" weight="duotone" />
+                          </div>
                         </div>
                         <h3 className="font-sans text-lg font-semibold tracking-wide leading-tight text-black mb-3">
                           {coleccion.nombre}

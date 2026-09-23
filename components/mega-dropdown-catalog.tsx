@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Search } from "lucide-react"
+import { MagnifyingGlass, Sparkle, LockOpen, Star } from "@phosphor-icons/react"
 import Link from "next/link"
 
 interface MegaDropdownCatalogProps {
@@ -38,7 +38,7 @@ export function MegaDropdownCatalog({ isOpen, onClose }: MegaDropdownCatalogProp
           <div className="space-y-4">
             <h3 className="font-serif text-lg font-semibold text-foreground">Búsqueda rápida</h3>
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+              <MagnifyingGlass className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" weight="light" />
               <Input
                 placeholder="Buscar libros, autores, temas..."
                 value={searchQuery}
@@ -116,7 +116,7 @@ export function MegaDropdownCatalog({ isOpen, onClose }: MegaDropdownCatalogProp
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-200 underline-animated"
                 onClick={onClose}
               >
-                <span className="text-lg">📚</span>
+                <Sparkle className="w-4 h-4" weight="light" />
                 <span>Novedades 2024</span>
               </Link>
               <Link
@@ -124,7 +124,7 @@ export function MegaDropdownCatalog({ isOpen, onClose }: MegaDropdownCatalogProp
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-200 underline-animated"
                 onClick={onClose}
               >
-                <span className="text-lg">🔓</span>
+                <LockOpen className="w-4 h-4" weight="light" />
                 <span>Acceso abierto</span>
               </Link>
               <Link
@@ -132,7 +132,7 @@ export function MegaDropdownCatalog({ isOpen, onClose }: MegaDropdownCatalogProp
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-200 underline-animated"
                 onClick={onClose}
               >
-                <span className="text-lg">⭐</span>
+                <Star className="w-4 h-4" weight="light" />
                 <span>Más descargados</span>
               </Link>
               <div className="pt-2 border-t border-border">

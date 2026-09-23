@@ -25,12 +25,12 @@ export function SiteFooter() {
             {/* Lado derecho - Redes sociales */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <div className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-white/80 mb-3 ml-4 md:ml-4">
-                SÍGUENOS
+                SEGUINOS
               </div>
               <Link
                 href="https://www.instagram.com/fa_publicaciones/"
                 className="text-sm sm:text-base text-white hover:text-[#E6D690] transition-colors duration-200"
-                aria-label="Síguenos en Instagram"
+                aria-label="Seguinos en Instagram"
               >
                 Instagram
               </Link>

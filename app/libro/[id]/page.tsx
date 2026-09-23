@@ -111,42 +111,32 @@ export default async function BookPage({ params }: BookPageProps) {
                 </h1>
               </div>
 
-              {/* Tags de autor y metadatos */}
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                {/* Tags de Autor */}
-                {libro.autores.map((autor) => (
-                  <div key={autor} className="bg-black border border-gray-800 rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-sm">
-                    <div className="flex items-center gap-2">
-                      <Users className="w-3 h-3 sm:w-4 sm:h-4 text-[#E6D690]" />
-                      <span className="text-xs sm:text-sm font-medium text-[#E6D690]">{autor}</span>
-                      <span className="text-xs text-gray-300">Autor</span>
-                    </div>
-                  </div>
-                ))}
-                
-                {/* Tag de Año */}
-                <div className="bg-black border border-gray-800 rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-[#E6D690]" />
-                    <span className="text-xs sm:text-sm font-medium text-[#E6D690]">{libro.anio}</span>
-                  </div>
-                </div>
+              {/* Autores */}
+              <div className="max-w-2xl mx-auto text-center px-4">
+                <p className="flex items-center justify-center gap-2 text-sm sm:text-base text-black/80">
+                  <Users className="w-4 h-4 shrink-0 text-black/60" />
+                  <span>{libro.autores.join(", ")}</span>
+                </p>
+              </div>
 
-                {/* Tag de Colección */}
+              {/* Metadatos livianos */}
+              <div className="flex flex-wrap justify-center gap-2 mb-6 sm:mb-8">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-black/20 px-3 py-1 text-xs sm:text-sm text-black/70">
+                  <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  {libro.anio}
+                </span>
+
                 {libro.coleccion && (
-                  <div className="bg-black border border-gray-800 rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-sm">
-                    <div className="flex items-center gap-2">
-                      <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 text-[#E6D690]" />
-                      <span className="text-xs sm:text-sm font-medium text-[#E6D690]">{libro.coleccion}</span>
-                    </div>
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-black/20 px-3 py-1 text-xs sm:text-sm text-black/70">
+                    <BookOpen className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    {libro.coleccion}
+                  </span>
                 )}
 
-                {/* Tag de Acceso Abierto */}
                 {libro.openAccess && (
-                  <div className="bg-black border border-gray-800 rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-sm">
-                    <span className="text-xs sm:text-sm font-medium text-[#E6D690]">Acceso Abierto</span>
-                  </div>
+                  <span className="inline-flex items-center rounded-full bg-black/90 px-3 py-1 text-xs sm:text-sm font-medium text-[#E6D690]">
+                    Acceso Abierto
+                  </span>
                 )}
               </div>
 
@@ -167,23 +157,6 @@ export default async function BookPage({ params }: BookPageProps) {
                       <Badge variant="secondary" className="bg-gray-100 text-gray-700 text-xs sm:text-sm">
                         {libro.paginas} páginas
                       </Badge>
-                    )}
-                  </div>
-
-                  {/* Información del autor */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-                    <div>
-                      <h3 className="text-xs uppercase text-gray-500 font-medium mb-2">AUTORES</h3>
-                      <p className="text-black text-sm sm:text-base">
-                        {libro.autores.slice(0, 2).join(", ")}
-                        {libro.autores.length > 2 ? ` y ${libro.autores.length - 2} más` : ""}
-                      </p>
-                    </div>
-                    {libro.coleccion && (
-                      <div>
-                        <h3 className="text-xs uppercase text-gray-500 font-medium mb-2">COLECCIÓN</h3>
-                        <p className="text-black text-sm sm:text-base">{libro.coleccion}</p>
-                      </div>
                     )}
                   </div>
 

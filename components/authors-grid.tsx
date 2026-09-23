@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { UserCircle } from "@phosphor-icons/react"
 import { autores } from "@/data/autores"
 
 export function AuthorsGrid() {
@@ -23,8 +24,8 @@ export function AuthorsGrid() {
                   {/* Author Image or Emoji - Optimizado para móvil */}
                   <div className="mb-3 sm:mb-4">
                     {autor.foto && autor.foto.startsWith('👤') ? (
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center text-2xl sm:text-3xl bg-gray-100 group-hover:bg-[#E6D690]/20 transition-colors duration-300">
-                        {autor.foto}
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center bg-gray-100 group-hover:bg-[#E6D690]/20 transition-colors duration-300">
+                        <UserCircle className="w-6 h-6 sm:w-7 sm:h-7 text-gray-400 group-hover:text-[#D4C078] transition-colors duration-300" weight="light" />
                       </div>
                     ) : autor.foto ? (
                       <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden">
