@@ -65,4 +65,33 @@ export const libros: Libro[] = [
     formatos: [{ tipo: "PDF", url: "/downloads/Didáctica-Educación-AmbientalNS.pdf", size: "7.1MB" }],
     openAccess: true,
   },
+  {
+    id: "3",
+    titulo: "Materia, materiales, materialismo. Reflexiones bibliológicas para una crítica literaria",
+    autores: [
+      "Miguel Ángel Hernández Acosta (coordinador)",
+      "Alfredo Léal (coordinador)",
+      "Hernán Maltz",
+      "Emiliano Sánchez Narvarte",
+      "Paula Andrea Marín-Colorado",
+      "Ana Elisa Ribeiro",
+      "Santiago Vera Cubas",
+      "Manuel Barrós",
+      "Kena Kitchengs",
+      "Luz Midilia Marroquín Franco",
+      "Sarah E. L. Bowskill",
+    ],
+    anio: 2026,
+    portada: "/covers/libro-MMM.jpg",
+    resumen:
+      "«En la actualidad, cuando la ciudad letrada ha disminuido su población (o eso se han encargado de señalar las y los especialistas), el libro, sus formas de consumo y las prácticas que genera se vuelven necesarias de estudiar. ¿Cambia un ejemplar cuando se ubica en una librería a cuando está en un hogar o en una biblioteca? ¿Es el mismo si se le lee como si perteneciera a un género u otro? ¿La reducción en la cantidad de venta de libros significa una reducción en el consumo de objetos de lectura? ¿La textualidad electrónica produce lectores de otro tipo a los que tenían las textualidades de papel?» (Miguel Ángel Hernández Acosta)\n\nEste libro es producto de las primeras Jornadas Interdisciplinarias de Bibliología Crítica para la Literatura, llevadas a cabo en enero de 2025 en el marco del Seminario Interdisciplinario de Bibliología (IIB – UNAM). Reúne a una nómina internacional de investigadorxs de distintas universidades —en su mayoría del Sur Global— que se plantean estas y otras preguntas mediante el estudio crítico de la producción editorial latinoamericana del siglo XX y lo que va del XXI. Sus páginas ofrecen pasajes de una rigurosidad y originalidad sobresalientes en el campo de los estudios del libro y la edición, que invitan a seguir debatiendo sobre lo que son (y no) los libros.",
+    tematicas: ["Bibliología", "Crítica Literaria", "Historia del Libro", "Edición"],
+    coleccion: "Literarias",
+    isbn: "978-631-91361-2-8",
+    paginas: 257,
+    formatos: [
+      { tipo: "PDF", url: "/downloads/Materia-materiales-materialismo.pdf", size: "4.9MB" },
+    ],
+    openAccess: true,
+  },
 ]
