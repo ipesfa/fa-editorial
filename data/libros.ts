@@ -16,9 +16,11 @@ export interface Libro {
     size?: string
   }>
   openAccess?: boolean
+  /** false = oculto del sitio (ej. esperando autorización de firmas). Default: true */
+  publicado?: boolean
 }
 
-export const libros: Libro[] = [
+const todosLosLibros: Libro[] = [
   {
     id: "1",
     titulo: "Fareros",
@@ -93,5 +95,8 @@ export const libros: Libro[] = [
       { tipo: "PDF", url: "/downloads/Materia-materiales-materialismo.pdf", size: "4.9MB" },
     ],
     openAccess: true,
+    publicado: false, // oculto: esperando autorización de firmas
   },
 ]
+
+export const libros: Libro[] = todosLosLibros.filter((libro) => libro.publicado !== false)
