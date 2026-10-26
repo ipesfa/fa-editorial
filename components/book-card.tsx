@@ -17,6 +17,7 @@ export function BookCard({ libro }: BookCardProps) {
             src={libro.portada || "/placeholder.svg"}
             alt={`Portada de ${libro.titulo}`}
             fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
             className="object-cover transition-all duration-200 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-200" />

@@ -34,6 +34,7 @@ export function FeaturedBook() {
                     src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${featuredBook.portada || "/placeholder.svg"}`}
                     alt={`Portada de ${featuredBook.titulo}`}
                     fill
+                    sizes="(max-width: 1024px) 80vw, 400px"
                     className="object-cover rounded-sm shadow-sm"
                   />
                 </div>
