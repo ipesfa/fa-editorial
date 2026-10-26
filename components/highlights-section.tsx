@@ -42,7 +42,7 @@ export function HighlightsSection() {
             <div className="lg:col-span-2 order-2 lg:order-1">
               <div className="relative max-w-[320px] sm:max-w-[380px] lg:max-w-[420px] mx-auto -mt-4 sm:-mt-6 lg:mt-14">
                 <div className="relative group cursor-pointer">
-                  <div className="aspect-[3/4] relative bg-white border border-gray-200/50 rounded-lg shadow-lg z-30 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 sm:group-hover:-translate-y-4 group-hover:rotate-1 sm:group-hover:rotate-3 overflow-hidden">
+                  <div className="aspect-[707/1000] relative bg-white border border-gray-200/50 rounded-lg shadow-lg z-30 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 sm:group-hover:-translate-y-4 group-hover:rotate-1 sm:group-hover:rotate-3 overflow-hidden">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${latestBook.portada}`}
                       alt={`Portada de ${latestBook.titulo}`}
@@ -56,8 +56,8 @@ export function HighlightsSection() {
                   </div>
 
                   {/* Capas de sombra mejoradas para móvil */}
-                  <div className="absolute top-1 left-1 sm:top-2 sm:left-2 w-full aspect-[3/4] bg-gray-100/80 border border-gray-100 rounded-lg z-20 transition-all duration-500 group-hover:top-2 group-hover:left-2 sm:group-hover:top-4 sm:group-hover:left-4 group-hover:rotate-1"></div>
-                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4 w-full aspect-[3/4] bg-gray-200/60 border border-gray-200 rounded-lg z-10 transition-all duration-500 group-hover:top-4 group-hover:left-4 sm:group-hover:top-8 sm:group-hover:left-8 group-hover:-rotate-1"></div>
+                  <div className="absolute top-1 left-1 sm:top-2 sm:left-2 w-full aspect-[707/1000] bg-gray-100/80 border border-gray-100 rounded-lg z-20 transition-all duration-500 group-hover:top-2 group-hover:left-2 sm:group-hover:top-4 sm:group-hover:left-4 group-hover:rotate-1"></div>
+                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4 w-full aspect-[707/1000] bg-gray-200/60 border border-gray-200 rounded-lg z-10 transition-all duration-500 group-hover:top-4 group-hover:left-4 sm:group-hover:top-8 sm:group-hover:left-8 group-hover:-rotate-1"></div>
                 </div>
               </div>
             </div>

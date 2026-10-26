@@ -97,6 +97,23 @@ const todosLosLibros: Libro[] = [
     openAccess: true,
     publicado: false, // oculto: esperando autorización de firmas
   },
+  {
+    id: "4",
+    titulo: "Las hormigas",
+    autores: ["Alfredo Léal"],
+    anio: 2026,
+    portada: "/covers/libro-las-hormigas.jpg",
+    resumen:
+      "Preguntándose cómo escribir la historia de un actor de doblaje cuya muerte lo marca para siempre, un escritor —que puede o no ser el que firma el libro intitulado Las hormigas— va haciendo bocetos de episodios, tramas, personajes. Por momentos, parece que va a conseguirlo, es decir, que va a poder narrar como se espera que se narre. En ocasiones, en cambio, simplemente se detiene, vuelve sobre sus pasos, se arrepiente. Igual que el camino que van haciendo las hormigas cuando aparecen en un hogar, sin razón aparente, y no lo abandonan hasta que no han conseguido lo que sea que buscaran, en este libro las palabras van sumándose a un plan del que poco saben, borrando al mismo tiempo autor y trama. Y, sin embargo, como las hormigas, el camino está ahí, la nouvelle está ahí.\n\nAlfredo Léal (San Pedro Mártir, 1985). Escritor, traductor, docente, actor y papá. Doctor en Estudios Latinoamericanos por la UNAM, donde se graduó de Maestro y Licenciado en Letras Modernas Francesas. Autor de numerosos artículos académicos y ensayísticos, recientemente ha publicado su traducción de la poesía completa de Marie Krysinska, reunida por vez primera en el volumen La voz y la música (Universidad Iberoamericana / Elefanta, 2026); el libro de cuentos El último futbolista sin tatuajes (UANL, 2025); y el libro de crítica literaria Dar (el) nombre. Notas de trabajo en torno a las relaciones entre autor y editor en Occidente (UTADEO, 2025). Su obra ha sido publicada en Alemania, Colombia, México y, ahora, Argentina.",
+    tematicas: ["Literatura", "Nouvelle", "Narrativa"],
+    coleccion: "Literarias",
+    isbn: "978-631-91361-3-5",
+    paginas: 60,
+    formatos: [
+      { tipo: "PDF", url: "/downloads/Las-hormigas.pdf", size: "3.7MB" },
+    ],
+    openAccess: true,
+  },
 ]
 
 export const libros: Libro[] = todosLosLibros.filter((libro) => libro.publicado !== false)

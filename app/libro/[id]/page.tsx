@@ -92,13 +92,13 @@ export default async function BookPage({ params }: BookPageProps) {
             <div className="flex flex-col items-center space-y-6 sm:space-y-8">
               {/* Portada del libro - Sin efectos 3D */}
               <div className="w-64 sm:w-80 max-w-full">
-                <div className="aspect-[3/4] w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div className="aspect-[707/1000] w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
                   <Image
                     src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${libro.portada || "/placeholder.svg"}`}
                     alt={`Portada de ${libro.titulo}`}
                     width={320}
-                    height={427}
-                    className="w-full h-full object-contain bg-white p-2"
+                    height={453}
+                    className="w-full h-full object-contain bg-white"
                     priority
                   />
                 </div>
